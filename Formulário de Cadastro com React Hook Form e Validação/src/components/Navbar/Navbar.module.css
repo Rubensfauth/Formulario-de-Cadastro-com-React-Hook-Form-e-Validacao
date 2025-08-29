@@ -1,0 +1,154 @@
+.navbar {
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar - Tema Escuro */
+:global(body.dark) .navbar {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+/* Navbar - Tema Claro */
+:global(body.light) .navbar {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logoLink {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Logo - Tema Escuro */
+:global(body.dark) .logoLink {
+  color: white;
+}
+
+:global(body.dark) .logoLink:hover {
+  color: #fbbf24;
+  transform: scale(1.05);
+}
+
+/* Logo - Tema Claro */
+:global(body.light) .logoLink {
+  color: #1f2937;
+}
+
+:global(body.light) .logoLink:hover {
+  color: #f59e0b;
+  transform: scale(1.05);
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+/* Links - Tema Escuro */
+:global(body.dark) .navLink {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+:global(body.dark) .navLink:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+:global(body.dark) .navLink.active {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+:global(body.dark) .navLink.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #fbbf24;
+  border-radius: 50%;
+}
+
+/* Links - Tema Claro */
+:global(body.light) .navLink {
+  color: rgba(31, 41, 55, 0.8);
+}
+
+:global(body.light) .navLink:hover {
+  color: #1f2937;
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+:global(body.light) .navLink.active {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+:global(body.light) .navLink.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #f59e0b;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .navContent {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .navLinks {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
